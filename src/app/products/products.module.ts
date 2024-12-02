@@ -4,6 +4,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductsRoutingModule } from './product-routing.module';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [ProductListComponent],
@@ -12,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
     ProductsRoutingModule,
     MatTableModule,
     MatButtonModule,
+    MatCardModule,
   ],
 })
 export class ProductsModule {}

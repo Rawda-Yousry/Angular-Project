@@ -1,7 +1,7 @@
 export interface Product {
-  id: number;
-  name: string;
-  price: number;
-  stock: number;
-  categoryId: number;
+  ProductId: number;
+  ProductName: string;
+  ProductPrice: number;
+  AvailablePieces: number;
+  ProductImg: string;
 }
