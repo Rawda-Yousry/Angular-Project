@@ -1,0 +1,81 @@
+<!-- <table style="width: 100%;">
+    <thead>
+        <tr>
+            <th scope="col">
+                No.
+            </th>
+            <th scope="col">
+                Name
+            </th>
+            <th scope="col">
+                Stock
+            </th>
+            <th scope="col">
+                Price
+            </th>
+            <th>
+                Add to cart
+            </th>
+            <th>
+                Edit
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of productList; let i = index;"
+            [ngClass]="product.stock < 2 ? 'lightgray-bg' : 'gray-bg'">
+            <td>
+                {{i+1}}
+            </td>
+            <td>
+                {{product.name}}
+            </td>
+            <td>
+                {{product.stock}}
+            </td>
+            <td>
+                {{product.price}}
+            </td>
+            <td>
+                <button>
+                    Add
+                </button>
+            </td>
+            <td>
+                <button>
+                    Edit
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table> -->
+
+<table mat-table [dataSource]="productList" class="mat-elevation-z8" style="width: 100%;">
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element; let i= index"> {{i+1}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Price </th>
+        <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef> Add to Cart </th>
+        <td mat-cell *matCellDef="let element"> </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{'gray-bg': row.stock < 2}">
+    </tr>
+</table>
